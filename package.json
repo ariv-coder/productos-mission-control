@@ -1,6 +1,6 @@
 {
-  "name": "productos-mission-control",
-  "version": "0.1.0",
+  "name": "1labs-mission-control",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
