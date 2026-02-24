@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Sidebar } from "@/components/sidebar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,15 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "1Labs AI Mission Control",
-  description: "AI Agent Orchestration Dashboard - Monitor and manage your AI agents across all projects",
-  keywords: ["AI", "agents", "orchestration", "mission control", "1Labs"],
-  authors: [{ name: "1Labs AI" }],
-  openGraph: {
-    title: "1Labs AI Mission Control",
-    description: "AI Agent Orchestration Dashboard",
-    type: "website",
-  },
+  title: "1Labs Mission Control",
+  description: "AI Agent Orchestration Dashboard",
 };
 
 export default function RootLayout({
@@ -34,7 +28,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex min-h-screen bg-background">
+          <Sidebar />
+          <main className="flex-1 p-6 overflow-auto">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );
